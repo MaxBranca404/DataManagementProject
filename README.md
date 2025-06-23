@@ -1,7 +1,7 @@
 # Music Analytics Data Warehouse
 
 A unified, query-ready data warehouse built from **four complementary public music datasets**.
-The warehouse is designed for **multidimensional analysis of music trends, audio characteristics, artist careers, and chart performance** from the late-1950s to today.
+The warehouse is designed for **multidimensional analysis of music trends, audio characteristics, artist careers, and chart performance** from the late-1950s to today. The pipeline is **coded in Python (ETL)** and the resulting data is **explored in Tableau Public**.
 
 ---
 
@@ -16,22 +16,7 @@ The warehouse is designed for **multidimensional analysis of music trends, audio
 
 ---
 
-## 🗄️ Dimensional Model (Star Schema)
-
-```
-                     ┌────────────┐
-                     │  Artist    │
-                     │  Dim       │
-                     └────────────┘
-                          ▲
-                          │
- ┌────────────┐    ┌──────────────┐     ┌────────────────┐
- │ Song Dim   │◄───┤ Chart Facts  ├───► │    Time Dim    │
- └────────────┘    │  (ChartPos)  │     └────────────────┘
-                   └──────────────┘
-```
-
-### Fact: `ChartPosition`
+## 🗄️ Fact: `ChartPosition`
 
 | Measure                           | Description                           |
 | --------------------------------- | ------------------------------------- |
@@ -48,7 +33,9 @@ The warehouse is designed for **multidimensional analysis of music trends, audio
 
 ---
 
-## 📜 License
+## 🔍 Example of queries in Tableau Public
 
-Project code is released under the MIT License.
-Please review individual dataset licenses before redistribution.
+* How danceability and acousticness have evolved in top-charting songs from the 1960 s → 2020 s
+* How long songs remain on the charts
+* Which artists have the most unique entries on Billboard Hot 100
+* Which decades produced the most danceable or most acoustic tracks
